@@ -16,10 +16,38 @@
 <body>
     <h1>Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong>em JavaScript</p>
-    <div>Clique em mim</div>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
     <script>
+        // É possível utilizar o DOM para atribuir um elemento a uma variável
+        var p1 = window.document.getElementsByTagName('p')[1]
+        var corpo = window.document.body
+        var d = window.document.getElementById('msg')
+
+        //uso do querySelector para um elemento específico
+        var e = window.document.querySelector('div#msg')
         
+        // A partir da variável é possível selecionar um elemento ou alterar a sua folha de estilo
+        window.document.writeln("Está escrito assim: " + p1.innerText)
+        p1.style.color = "black"
+        corpo.style.backgroundColor = "darkblue"
+        d.style.backgroundColor = "green"
+        d.innerText = "Texto alterado para aguardando..."
+        e.style.color = 'purple'
+
+        //É possível escrever diretamente na tela ou identificar o conteúdo de uma elemento. o uso de window é opcional
+        window.document.writeln('Olá Mundo!')     
+        window.document.writeln(window.document.charset)
+        window.document.writeln(window.document.URL)
+
+        //A propriedade innerText apresenta apenas o texto sem formatação e innerHTML apresenta o texto configurado em HTML.
+        window.document.writeln(p1.innerText)
+        window.document.writeln(p1.innerHTML)
+
+
+
+        
+
     </script>
 </body>
 </html>
