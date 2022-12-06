@@ -12,8 +12,25 @@
         <h1>Verificador de idade</h1>
     </header>
     <section>
-        <div></div>
-        <div></div>
+        <div>
+            <p>
+                <label for="idano">Ano de Nascimento:</label>
+                <input type="number" name="nano" id="idano" min="1900" max="2022" required>
+            </p>            
+            <p>Sexo:
+                <input type="radio" name="radsexo" id="masc" checked>
+                <label for="masc">masculino</label>
+                <input type="radio" name="radsexo" id="fem">
+                <label for="fem">feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            Preencha os dados acima para ver os resultados
+        </div>
+        
     </section>
     <footer>
         <p>&copy; CursoemVideo</p>
