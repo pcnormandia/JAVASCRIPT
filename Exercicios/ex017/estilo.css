@@ -1,0 +1,23 @@
+@charset "URF-8";
+body{
+    background-color:lightskyblue;
+    font: normal 15pt arial;
+}
+header{
+    text-align: center;
+    color: white;
+}
+section{
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.392);
+}
+
+footer{
+    text-align: center;
+    color: white;
+}
