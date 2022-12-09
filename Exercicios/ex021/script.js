@@ -1,4 +1,4 @@
-let num = document.querySelector('input#fnum') //Criar variavel para capturar os valores digitados no campo input
+let num = document.querySelector('input#fnum') //Criar variável para capturar os valores digitados no campo input
 let lista = document.querySelector('select#flista') //Criar variável para receber os valores válidos digitados
 let res = document.querySelector('div#res') //Criar uma váriavel para mostrar os resultados finais
 let valores = [] //Criar uma variável do tipo array para receber os valores digitados
@@ -19,19 +19,23 @@ function inLista(n, l){
         return false
     }
 }
-//Adicionar os valores validos no array
-function adicionar(n){
+//Função para validar os dados e adicionar valores a lista
+function adicionar(){
     //Desvio condicional para validação dos dados
     if(isNumero(num.value) && !inLista(num.value, valores)){
-        valores.push(Number(num.value))
-        lista.innerHTML = `O valor ${Number(num.value)} foi inserido na lista`
+        valores.push(Number(num.value))//Adicionar os valores validos no array
+        let item = document.createElement('option') //Criar um novo item como uma variável para incluir cada valor válido 
+        item.text = `Valor ${num.value} adicionado` //Definir o texto de cada item que será adicionado
+        lista.appendChild(item) //Incluir cada valor como um item na lista
     }else{
         window.alert('Valor inválido ou já encontrado na lista')
     }
-    
+    num.value = '' //Apaga o valor digitado deixando o campo em branco
+    num.focus() //Deixa o cursor parado neste elemento html
 }
 
 function finalizar(){
+    
     for(let c in valores){
         if(c==0){
             let maior = valores[0]
@@ -44,10 +48,9 @@ function finalizar(){
 
 //limpar o campo dos resultados finais
 
-//Mostrar os valores do array em um elemento select
 //Limpar os dados de análise dos números
 
-//Criar uma variável para receber os resultados     
+
 
 //Função para analisar os números obtidos na array
 
