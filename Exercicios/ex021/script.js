@@ -27,32 +27,47 @@ function adicionar(){
         let item = document.createElement('option') //Criar um novo item como uma variável para incluir cada valor válido 
         item.text = `Valor ${num.value} adicionado` //Definir o texto de cada item que será adicionado
         lista.appendChild(item) //Incluir cada valor como um item na lista
+        res.innerHTML = '' //Limpar a análise dos números anteriores (função finalizar)
     }else{
-        window.alert('Valor inválido ou já encontrado na lista')
+        window.alert('Valor inválido ou já encontrado na lista')//Aviso para informar condição inválida
     }
     num.value = '' //Apaga o valor digitado deixando o campo em branco
     num.focus() //Deixa o cursor parado neste elemento html
 }
-
+//Função para realizar a análise final dos números
 function finalizar(){
     
-    for(let c in valores){
-        if(c==0){
-            let maior = valores[0]
-        }else if(valores[c]>maior){
-            maior = valores[c]
+    if(valores.length == 0){ //Verificar inicialmente se há dados digitados
+        window.alert(`Adicione valores antes de finalizar`)
+    }else{
+        let tot = valores.length //Estabelecer uma variável local com o total de elementos do array
+        let maior = valores[0] //Estabelecer inicialmente uma variável local como maior
+        let menor = valores[0] //Estabelecer inicialmente uma variável local como menor
+        let soma = 0
+        let media = 0        
+        for(let pos in valores){
+            soma += valores[0]            
+        if(valores[pos]>maior){
+            maior = valores[pos]
         }
+        if(valores[pos]<menor)
+            menor = valores[pos]
+        }
+        media = soma/tot
+        res.innerHTML = "" //Limpar todos os dados anteriores
+        res.innerHTML += `<p>Ao todo temos ${tot} valores cadastrados.</p>` //Informar o número de valores cadastrados na array
+        res.innerHTML += `<p>O maior valor obtido foi ${maior}.</p>`
+        res.innerHTML += `<p>O menor valor obtido foi ${menor}.</p>`
+        res.innerHTML += `<p>A somatória dos valores é ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores é ${media}.</p>`
     }
-    res.innerHTML = `O maior valor obtido foi ${maior}`
+       
 }
 
-//limpar o campo dos resultados finais
-
-//Limpar os dados de análise dos números
 
 
 
-//Função para analisar os números obtidos na array
+
 
 //Contar os valores válidos cadastrados no array
 //Verificar o maior valor válido cadastrado
